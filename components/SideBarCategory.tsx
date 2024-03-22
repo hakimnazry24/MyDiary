@@ -2,7 +2,7 @@ import { Enriqueta } from "next/font/google";
 import React from "react";
 import { prisma } from "@/prisma/db";
 
-export default async function SideBarCategory({ date }) {
+export default async function SideBarCategory({ date }: { date: Date }) {
   const titles = await prisma.entry.findMany({
     select: {
       id: true,
